@@ -100,6 +100,7 @@ app.get("/", (req, res) => {
 
 });
 
+
 app.get(
   "/doctors",
   async (req, res) => {
