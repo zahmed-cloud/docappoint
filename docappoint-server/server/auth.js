@@ -19,6 +19,7 @@ export const auth = betterAuth({
   ),
 
   trustedOrigins: [
+    "https://docappoint-client-kappa.vercel.app",
     "https://doctor-appointment-client-psi.vercel.app",
     "http://localhost:5173",
   ],
