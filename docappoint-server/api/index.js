@@ -1,4 +1,5 @@
 import { auth } from "../server/auth.js";
+import { toNodeHandler } from "better-auth/node";
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -23,9 +24,7 @@ app.use(
 
 app.use(express.json());
 
-app.all("/api/auth/{*path}", async (req, res) => {
-  return auth.handler(req, res);
-});
+app.all("/api/auth/{*path}", toNodeHandler(auth));
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.pcz5eav.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
